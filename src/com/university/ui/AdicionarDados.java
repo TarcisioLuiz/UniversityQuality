@@ -16,11 +16,18 @@ import com.university.negocio.negocioAlocacao;
 
 public class AdicionarDados {
 	private static 	Scanner scan = new Scanner(System.in);
-	private static NegocioDepartamento dept;
-	private static NegocioProfessor prof;
-	private static NegocioCurso crs;
+	private  NegocioDepartamento dept;
+	private  NegocioProfessor prof;
+	private  NegocioCurso crs;
+	
+	public AdicionarDados(NegocioDepartamento dept, NegocioProfessor prof, NegocioCurso crs)
+	{
+		this.dept = dept;
+		this.prof = prof;
+		this.crs = crs;
+	}
 
-	public static  Curso adicionandoCurso(NegocioCurso crs) {
+	public Curso adicionandoCurso(NegocioCurso crs) {
 		Curso curso = new Curso();
 
 		System.out.println("digite o nome do curso: ");
@@ -29,7 +36,7 @@ public class AdicionarDados {
 		return curso;
 	}
 
-	public static Professor adicionandoProfessor(NegocioProfessor prof) {
+	public Professor adicionandoProfessor(NegocioProfessor prof) {
 		Professor professor = new Professor();
 		int valorSelecionado = 0;
 
@@ -55,7 +62,7 @@ public class AdicionarDados {
 		return professor;
 	}
 
-	public static Alocacao adicionandoAlocacao(negocioAlocacao aloc) {
+	public Alocacao adicionandoAlocacao(negocioAlocacao aloc) {
 		Alocacao alocacao = new Alocacao();
 		int valorSelecionado = 0;
 
@@ -104,12 +111,9 @@ public class AdicionarDados {
 		}else
 			System.out.println("O professor ja está cadastrado nesse horario");
 			return alocacao;
-
-
-
 	}
 	
-	public static Departamento adicionandoDepartamento(NegocioDepartamento dept) {
+	public Departamento adicionandoDepartamento(NegocioDepartamento dept) {
 		Departamento departamento = new Departamento();
 		
 		System.out.println("Digite o nome do departamento: ");

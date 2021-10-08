@@ -9,10 +9,13 @@ import com.university.negocio.negocioAlocacao;
 
 public class RemoverDados {
 	private static Scanner scan = new Scanner(System.in);
-	private static int valorSelecionado = 0;
+	private int valorSelecionado;
+	
+	public RemoverDados(NegocioDepartamento dept, NegocioProfessor prof, NegocioCurso crs) {
+		super();
+	}
 
-	public static  void removendoCurso(NegocioCurso crs) {
-
+	public void removendoCurso(NegocioCurso crs) {
 		while (true){
 			System.out.println("Qual curso você deseja remover: ");
 
@@ -28,9 +31,7 @@ public class RemoverDados {
 		}crs.removerCurso(valorSelecionado);	
 	}
 
-
-
-	public static void removendoProfessor(NegocioProfessor prof) {
+	public void removendoProfessor(NegocioProfessor prof) {
 
 		while(true) {
 			System.out.println("Qual Professor você deseja remover: ");
@@ -47,7 +48,7 @@ public class RemoverDados {
 		}prof.removerProfessor(valorSelecionado);
 	}
 
-	public static void removendoAlocacao(negocioAlocacao aloc) {
+	public void removendoAlocacao(negocioAlocacao aloc) {
 		while (true) {
 			System.out.println("Qual Alocacao você deseja remover: ");
 
@@ -62,10 +63,9 @@ public class RemoverDados {
 			}else break;
 
 		}aloc.removerAlocacao(valorSelecionado);
-
 	}
 
-	public static void removendoDepartamento(NegocioDepartamento dept) {
+	public void removendoDepartamento(NegocioDepartamento dept) {
 		while (true) {
 			System.out.println("Qual departamento você deseja remover: ");
 

@@ -7,7 +7,7 @@ import com.university.repositorio.RepositorioAlocacao;
 
 
 public class negocioAlocacao {
-	RepositorioAlocacao alocacoesNegocio = new RepositorioAlocacao();
+	private static RepositorioAlocacao alocacoesNegocio = new RepositorioAlocacao();
 
 	public boolean inserirAlocacao(Alocacao novaAlocacao) {
 		for(Alocacao alocacao : getAlocacoesNegocio()) {

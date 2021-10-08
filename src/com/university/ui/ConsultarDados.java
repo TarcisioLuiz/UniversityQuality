@@ -4,10 +4,16 @@ import com.university.negocio.NegocioCurso;
 import com.university.negocio.NegocioProfessor;
 
 public class ConsultarDados {
-    private static NegocioCurso crs;
-    private static NegocioProfessor prof;
+    private NegocioCurso crs;
+    private NegocioProfessor prof;
+    
+    public ConsultarDados(NegocioCurso crs, NegocioProfessor prof) {
+		super();
+		this.crs = crs;
+		this.prof = prof;
+	}
 
-    public static String consultarCursoPorNome(String nome){
+	public String consultarCursoPorNome(String nome){
         String upper = nome.toUpperCase();
         boolean validacao = false;
         while (true) {
@@ -23,7 +29,7 @@ public class ConsultarDados {
         } return "Esse curso não existe";
     }
 
-    public static String consultarProfessorPorCpf (String cpf) {
+    public String consultarProfessorPorCpf (String cpf) {
 
         String cpfFormatado = cpf.substring(0, 3) + "."
                 + cpf.substring(3, 6) + "."

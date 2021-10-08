@@ -24,6 +24,9 @@ public class QualitiUniversity {
 		professores = new NegocioProfessor();
 		alocacoes = new negocioAlocacao();
 		departamentos = new NegocioDepartamento();
+		AdicionarDados ad = new AdicionarDados(departamentos, professores, cursos);
+		RemoverDados rd = new RemoverDados(departamentos, professores, cursos);
+		ConsultarDados cd = new ConsultarDados(cursos, professores);
 
 		while (true) {
 			System.out.println("Ola, bem vindo ao sistema de cadastro da Qualiti University");
@@ -48,19 +51,19 @@ public class QualitiUniversity {
 				String escolhacadastro = scan.nextLine();
 
 				if (escolhacadastro.equals("1")) {
-					System.out.println(AdicionarDados.adicionandoCurso(cursos));
+					System.out.println(ad.adicionandoCurso(cursos));
 					Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("2")) {
-					System.out.println(AdicionarDados.adicionandoProfessor(professores));
+					System.out.println(ad.adicionandoProfessor(professores));
 					Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("3")) {	
-					AdicionarDados.adicionandoAlocacao(alocacoes);
+					ad.adicionandoAlocacao(alocacoes);
 					Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("4")) {
-					System.out.println(AdicionarDados.adicionandoDepartamento(departamentos));
+					System.out.println(ad.adicionandoDepartamento(departamentos));
 					Thread.sleep(1000);
 
 
@@ -79,25 +82,25 @@ public class QualitiUniversity {
 				String escolhacadastro = scan.nextLine();
 
 				if (escolhacadastro.equals("1")) {
-					RemoverDados.removendoCurso(cursos);
+					rd.removendoCurso(cursos);
 					for(Curso aux : cursos.getCursosNegocio()) {
 						System.out.println(aux.getNome());
 					}Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("2")) {
-					RemoverDados.removendoProfessor(professores);
+					rd.removendoProfessor(professores);
 					for(Professor aux : professores.getProfessorNegocio()) {
 						System.out.println(aux.getNome());	
 					}Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("3")) {
-					RemoverDados.removendoAlocacao(alocacoes);
+					rd.removendoAlocacao(alocacoes);
 					for(Alocacao aux : alocacoes.getAlocacoesNegocio()) {
 						System.out.println(aux.getDiaDaSemana());
 					}Thread.sleep(1000);
 
 				} else if (escolhacadastro.equals("4")) {
-					RemoverDados.removendoDepartamento(departamentos);
+					rd.removendoDepartamento(departamentos);
 					for(Departamento aux : departamentos.getDepartamentosNegocio()) {
 						System.out.println(aux.getNome());	
 					}Thread.sleep(1000);
@@ -148,13 +151,13 @@ public class QualitiUniversity {
 
 				if (escolhaBusca.equals("1")) {
 					System.out.println("Escreva o nome do curso para a busca: ");
-					System.out.println(ConsultarDados.consultarCursoPorNome(scan.nextLine()));
+					System.out.println(cd.consultarCursoPorNome(scan.nextLine()));
 					Thread.sleep(1000);
 
 
 				}else if (escolhaBusca.equals("2")){
 					System.out.println("Digite o CPF do professor:");
-					System.out.println(ConsultarDados.consultarProfessorPorCpf(scan.nextLine()));
+					System.out.println(cd.consultarProfessorPorCpf(scan.nextLine()));
 					Thread.sleep(1000);
 				}
 			}else break;
