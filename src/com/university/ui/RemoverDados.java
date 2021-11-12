@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.university.negocio.NegocioCurso;
 import com.university.negocio.NegocioDepartamento;
 import com.university.negocio.NegocioProfessor;
-import com.university.negocio.negocioAlocacao;
+import com.university.negocio.NegocioAlocacao;
 
 public class RemoverDados {
 	private static Scanner scan = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class RemoverDados {
 		}prof.removerProfessor(valorSelecionado);
 	}
 
-	public void removendoAlocacao(negocioAlocacao aloc) {
+	public void removendoAlocacao(NegocioAlocacao aloc) {
 		while (true) {
 			System.out.println("Qual Alocacao você deseja remover: ");
 

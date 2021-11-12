@@ -8,21 +8,21 @@ import com.university.modelo.Professor;
 import com.university.negocio.NegocioCurso;
 import com.university.negocio.NegocioDepartamento;
 import com.university.negocio.NegocioProfessor;
-import com.university.negocio.negocioAlocacao;
+import com.university.negocio.NegocioAlocacao;
 
 
 public class QualitiUniversity {
 	private static Scanner scan = new Scanner(System.in);
 	private static NegocioCurso cursos;
 	private static NegocioProfessor professores;
-	private static negocioAlocacao alocacoes;
+	private static NegocioAlocacao alocacoes;
 	private static NegocioDepartamento departamentos;
 
 
 	public static void main(String[] args) throws InterruptedException {
 		cursos = new NegocioCurso();
 		professores = new NegocioProfessor();
-		alocacoes = new negocioAlocacao();
+		alocacoes = new NegocioAlocacao();
 		departamentos = new NegocioDepartamento();
 		AdicionarDados ad = new AdicionarDados(departamentos, professores, cursos);
 		RemoverDados rd = new RemoverDados(departamentos, professores, cursos);

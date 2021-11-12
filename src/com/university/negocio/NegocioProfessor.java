@@ -10,8 +10,12 @@ public class NegocioProfessor {
 	private static RepositorioProfessor professoresNegocio = new RepositorioProfessor();
 
 
-	public void inserirProfessor(Professor novoProfessor) {
+	public String inserirProfessor(Professor novoProfessor) {
+		if(novoProfessor.getCpf().contains("abcdefghijklmnopqrstuvwxyz")) {
+			return "Erro ao cadastrar, CPF inválido";
+		}else
 		professoresNegocio.inserirProfessor(novoProfessor);
+		return "Cadastro realizado";
 	}
 
 	public void removerProfessor(int index) {

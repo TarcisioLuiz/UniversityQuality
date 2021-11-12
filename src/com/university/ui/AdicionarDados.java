@@ -10,7 +10,7 @@ import com.university.modelo.Professor;
 import com.university.negocio.NegocioCurso;
 import com.university.negocio.NegocioDepartamento;
 import com.university.negocio.NegocioProfessor;
-import com.university.negocio.negocioAlocacao;
+import com.university.negocio.NegocioAlocacao;
 
 
 
@@ -58,11 +58,12 @@ public class AdicionarDados {
 		Departamento item = dept.getDepartamentosNegocio().get(valorSelecionado);
 		professor.setDepartamento(item);
 
-		prof.inserirProfessor(professor);
+		String msg = prof.inserirProfessor(professor);
+		System.out.println(msg);
 		return professor;
 	}
 
-	public Alocacao adicionandoAlocacao(negocioAlocacao aloc) {
+	public Alocacao adicionandoAlocacao(NegocioAlocacao aloc) {
 		Alocacao alocacao = new Alocacao();
 		int valorSelecionado = 0;
 
@@ -103,14 +104,10 @@ public class AdicionarDados {
 		}
 			Curso itemCurso = crs.getCursosNegocio().get(valorSelecionado);
 			alocacao.setCurso(itemCurso);
-
-
-		if (aloc.inserirAlocacao(alocacao) == true) {
-			System.out.println("Professor cadastrado com sucesso");
-			return alocacao;
-		}else
-			System.out.println("O professor ja está cadastrado nesse horario");
-			return alocacao;
+		String msg = aloc.inserirAlocacao(alocacao);
+		System.out.println(msg);
+		return alocacao;
+		
 	}
 	
 	public Departamento adicionandoDepartamento(NegocioDepartamento dept) {

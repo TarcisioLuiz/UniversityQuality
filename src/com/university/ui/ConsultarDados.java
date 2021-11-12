@@ -29,8 +29,10 @@ public class ConsultarDados {
         } return "Esse curso não existe";
     }
 
-    public String consultarProfessorPorCpf (String cpf) {
-
+    public String consultarProfessorPorCpf (String cpf){
+    	while (cpf.length() < 11) {
+			cpf = "0" + cpf;
+		}
         String cpfFormatado = cpf.substring(0, 3) + "."
                 + cpf.substring(3, 6) + "."
                 + cpf.substring(6, 9) + "-"
